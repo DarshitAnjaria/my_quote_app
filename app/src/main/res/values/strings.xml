@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MyQuotes</string>
     <string name="my_quotes">My Quotes</string>
+    <string name="what_s_on_your_mind">What\'s on your Mind?</string>
+    <string name="enter_quote">Enter Quote</string>
+    <string name="author_name">Author Name</string>
+    <string name="submit">Submit</string>
 </resources>

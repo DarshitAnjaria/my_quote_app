@@ -13,6 +13,6 @@
             android:text="@string/my_quotes"
             android:layout_centerInParent="true"
             android:textStyle="bold"
-            android:textSize="25sp"/>
+            android:textSize="25sp" android:textColor="@color/colorPrimary"/>
 
 </RelativeLayout>
