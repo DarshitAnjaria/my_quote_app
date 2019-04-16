@@ -5,4 +5,6 @@
     <string name="enter_quote">Enter Quote</string>
     <string name="author_name">Author Name</string>
     <string name="submit">Submit</string>
+    <string name="view_quotes">View Quotes</string>
+    <string name="add_quote">Add Quote</string>
 </resources>
