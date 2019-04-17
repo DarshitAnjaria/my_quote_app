@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.android.myquotes.R
-import com.android.myquotes.model.quotes
+import com.android.myquotes.model.Quotes
 
-class quoteAdapter(val quoteList : ArrayList<quotes>): RecyclerView.Adapter<quoteAdapter.ViewHolder>(){
+class quoteAdapter(val quoteList : ArrayList<Quotes>): RecyclerView.Adapter<quoteAdapter.ViewHolder>(){
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

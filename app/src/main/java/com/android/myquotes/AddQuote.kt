@@ -10,6 +10,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.android.myquotes.DatabaseManager.DatabaseManager
+import com.android.myquotes.model.Quotes
+import java.util.*
 
 class AddQuote : AppCompatActivity() {
 
@@ -17,6 +19,9 @@ class AddQuote : AppCompatActivity() {
     lateinit var etQuote : EditText
     lateinit var etAuthor : EditText
     lateinit var btnSubmit : Button
+
+    lateinit var Quotes: Quotes
+    lateinit var databaseManager : DatabaseManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +62,16 @@ class AddQuote : AppCompatActivity() {
         else{
             etAuthor.error = null
         }
+
+        databaseManager = DatabaseManager(this, null)
+
+        databaseManager.saveQuote(quote,author)
+
+        Toast.makeText(applicationContext,"Quote by " + author + " Added Successfully!", Toast.LENGTH_LONG).show()
+
+        etQuote.setText("")
+        etAuthor.setText("")
+        etQuote.requestFocus()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
