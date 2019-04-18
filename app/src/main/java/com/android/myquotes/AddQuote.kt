@@ -1,5 +1,6 @@
 package com.android.myquotes
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
@@ -82,7 +83,7 @@ class AddQuote : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item!!.itemId){
-            R.id.optMenu -> Toast.makeText(applicationContext, "View Quotes", Toast.LENGTH_LONG).show()
+            R.id.optMenu -> startActivity(Intent(applicationContext, ViewQuote::class.java))
 
         }
         return super.onOptionsItemSelected(item)

@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.android.myquotes.R
 import com.android.myquotes.model.Quotes
 
-class quoteAdapter(val quoteList : ArrayList<Quotes>): RecyclerView.Adapter<quoteAdapter.ViewHolder>(){
+class QuoteAdapter(val quoteList : ArrayList<Quotes>): RecyclerView.Adapter<QuoteAdapter.ViewHolder>(){
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -16,7 +16,7 @@ class quoteAdapter(val quoteList : ArrayList<Quotes>): RecyclerView.Adapter<quot
         val tvAuthor : TextView = itemView.findViewById(R.id.tvShowAuthor)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): quoteAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): QuoteAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.itemview, parent, false)
         return ViewHolder(v)
     }
@@ -25,7 +25,7 @@ class quoteAdapter(val quoteList : ArrayList<Quotes>): RecyclerView.Adapter<quot
         return quoteList.size
     }
 
-    override fun onBindViewHolder(holder: quoteAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: QuoteAdapter.ViewHolder, position: Int) {
         holder.tvAuthor.text = quoteList[position].author
         holder.tvQuote.text = quoteList[position].quote
     }
