@@ -41,7 +41,7 @@ class ViewQuote : AppCompatActivity() {
 
             }while (cursor.moveToNext())
 
-            recyclerView.adapter = QuoteAdapter(quoteList)
+            recyclerView.adapter = QuoteAdapter(quoteList, this)
         }
     }
 }

@@ -7,4 +7,7 @@
     <string name="submit">Submit</string>
     <string name="view_quotes">View Quotes</string>
     <string name="add_quote">Add Quote</string>
+    <string name="quote">Quotes</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

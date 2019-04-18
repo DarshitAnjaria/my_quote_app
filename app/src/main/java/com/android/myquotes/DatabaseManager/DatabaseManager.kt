@@ -43,6 +43,18 @@ class DatabaseManager(context: Context?, factory: SQLiteDatabase.CursorFactory?)
         return sqliteDatabase.rawQuery("SELECT * FROM $tableName", null)
     }
 
+    fun updateQuote(quotes: Quotes) : Boolean{
+        val sqliteDatabase : SQLiteDatabase = writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(COL_ID, quotes.id)
+        contentValues.put(COL_QUOTE, quotes.quote)
+        contentValues.put(COL_AUTHOR, quotes.author)
+
+        val _update = sqliteDatabase.update(tableName, contentValues, COL_ID + "=?", arrayOf(quotes.id.toString())).toLong()
+        sqliteDatabase.close()
+        return Integer.parseInt("$_update") != -1
+    }
+
     companion object{
         private val dbVersion = 1
         private val dbName = "MyQuote.db"
