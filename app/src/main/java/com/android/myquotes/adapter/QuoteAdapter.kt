@@ -2,6 +2,7 @@ package com.android.myquotes.adapter
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.database.Cursor
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -66,6 +67,37 @@ class QuoteAdapter(val quoteList : ArrayList<Quotes>, val context : Context): Re
 
                 quoteList.clear()
                 loadDataAgain()
+                holder.tvQuote.text = quoteList[position].quote
+                holder.tvAuthor.text = quoteList[position].author
+                dialog.dismiss()
+            }
+
+        }
+
+        holder.btnDelete.setOnClickListener {
+
+            val db = DatabaseManager(context, null)
+
+            val alertDialog = AlertDialog.Builder(context)
+
+            val layoutInflater = LayoutInflater.from(context)
+            val v = layoutInflater.inflate(R.layout.custom_dialog, null)
+            alertDialog.setView(v)
+
+            val dialog = alertDialog.create()
+            dialog.show()
+
+            val yes : TextView = v.findViewById(R.id.tvYes)
+            val no : TextView = v.findViewById(R.id.tvNo)
+
+            yes.setOnClickListener {
+                db.deleteQuote(quoteList[position].id)
+                Toast.makeText(context, "Quote by " + quoteList[position].author + " Deleted", Toast.LENGTH_LONG).show()
+                loadDataAgain()
+                dialog.dismiss()
+            }
+
+            no.setOnClickListener {
                 dialog.dismiss()
             }
         }
@@ -76,6 +108,7 @@ class QuoteAdapter(val quoteList : ArrayList<Quotes>, val context : Context): Re
         val cursor = db.getQuote()
 
         if (cursor!!.moveToFirst()){
+            quoteList.clear()
             do {
                 quoteList.add(Quotes(
                     cursor.getInt(0),
@@ -84,6 +117,8 @@ class QuoteAdapter(val quoteList : ArrayList<Quotes>, val context : Context): Re
                 ))
 
             }while (cursor.moveToNext())
+
+            notifyDataSetChanged()
         }
     }
 

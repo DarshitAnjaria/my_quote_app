@@ -10,4 +10,5 @@
     <string name="quote">Quotes</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="cancel">CANCEL</string>
 </resources>

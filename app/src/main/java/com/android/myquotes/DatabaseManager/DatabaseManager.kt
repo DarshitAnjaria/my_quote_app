@@ -40,7 +40,7 @@ class DatabaseManager(context: Context?, factory: SQLiteDatabase.CursorFactory?)
 
     fun getQuote(): Cursor?{
         val sqliteDatabase : SQLiteDatabase = readableDatabase
-        return sqliteDatabase.rawQuery("SELECT * FROM $tableName", null)
+        return sqliteDatabase.rawQuery("SELECT * FROM $tableName ORDER By " + COL_ID + " DESC", null)
     }
 
     fun updateQuote(quotes: Quotes) : Boolean{
@@ -53,6 +53,13 @@ class DatabaseManager(context: Context?, factory: SQLiteDatabase.CursorFactory?)
         val _update = sqliteDatabase.update(tableName, contentValues, COL_ID + "=?", arrayOf(quotes.id.toString())).toLong()
         sqliteDatabase.close()
         return Integer.parseInt("$_update") != -1
+    }
+
+    fun deleteQuote(_id : Int) : Boolean{
+        val sqLiteDatabase : SQLiteDatabase = writableDatabase
+        val _delete = sqLiteDatabase.delete(tableName, COL_ID + "=?", arrayOf(_id.toString())).toLong()
+        sqLiteDatabase.close()
+        return Integer.parseInt("$_delete") != -1
     }
 
     companion object{

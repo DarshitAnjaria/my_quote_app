@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete quote?"
+        android:layout_marginTop="10dp"
+        android:textSize="22sp"
+        android:padding="20dp"/>
+
+    <TextView
+        android:id="@+id/tvYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@id/tvDelete"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:id="@+id/tvNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/tvDelete"
+        android:layout_toLeftOf="@id/tvYes"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"/>
+
+</RelativeLayout>
