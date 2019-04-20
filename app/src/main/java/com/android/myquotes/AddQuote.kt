@@ -68,7 +68,7 @@ class AddQuote : AppCompatActivity() {
 
         databaseManager.saveQuote(quote,author)
 
-        Toast.makeText(applicationContext,"Quote by " + author + " Added Successfully!", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext,"Quote by " + author + " saved successfully!", Toast.LENGTH_LONG).show()
 
         etQuote.setText("")
         etAuthor.setText("")

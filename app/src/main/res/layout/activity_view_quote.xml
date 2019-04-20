@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ViewQuote"
-    android:orientation="vertical">
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ViewQuote"
+        android:orientation="vertical">
 
     <include
         layout="@layout/toolbar"
@@ -15,6 +15,29 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"/>
+            android:padding="8dp"
+            android:layout_below="@id/viewQuoteToolbar"/>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data_available"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/btnAddNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_new"
+        android:layout_below="@id/tvNoData"
+        android:layout_centerHorizontal="true"
+        app:cornerRadius="3dp"
+        android:visibility="gone"
+        android:elevation="8dp"
+        android:layout_marginTop="5dp"/>
+
+</RelativeLayout>

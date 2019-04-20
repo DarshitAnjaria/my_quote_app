@@ -63,7 +63,7 @@ class QuoteAdapter(val quoteList : ArrayList<Quotes>, val context : Context): Re
                 val db = DatabaseManager(context, null)
                 val new_data = Quotes(quoteList[position].id, new_quote, new_author)
                 db.updateQuote(new_data)
-                Toast.makeText(context, "Quote by " + new_author + " Updated", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Quote by " + new_author + " updated", Toast.LENGTH_LONG).show()
 
                 quoteList.clear()
                 loadDataAgain()
@@ -92,7 +92,7 @@ class QuoteAdapter(val quoteList : ArrayList<Quotes>, val context : Context): Re
 
             yes.setOnClickListener {
                 db.deleteQuote(quoteList[position].id)
-                Toast.makeText(context, "Quote by " + quoteList[position].author + " Deleted", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Quote by " + quoteList[position].author + " deleted", Toast.LENGTH_LONG).show()
                 loadDataAgain()
                 dialog.dismiss()
             }
