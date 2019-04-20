@@ -34,9 +34,10 @@
         android:layout_height="wrap_content"
         android:text="@string/add_new"
         android:layout_below="@id/tvNoData"
+        app:icon="@drawable/ic_add"
+        android:visibility="gone"
         android:layout_centerHorizontal="true"
         app:cornerRadius="3dp"
-        android:visibility="gone"
         android:elevation="8dp"
         android:layout_marginTop="5dp"/>
 
